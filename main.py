@@ -2,7 +2,9 @@ import maths
 
 
 def main():
-    print(maths.standaard_afwijking(p=0.5, n=20))
+    p = maths.steekproef_proportie(146, 470)
+    antwoord = maths.betrouwbaarheidsinterval_95(p, maths.standaard_afwijking(p, 470))
+    print()
 
 
 if __name__ == '__main__':
