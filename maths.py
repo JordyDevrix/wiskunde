@@ -1,28 +1,28 @@
 import math
 
 
-def steekproef_verdeling(sigma: float, n: int):
+def steekproef_verdeling(sigma: float, n: int) -> float:
     n = math.sqrt(n)
     return float(sigma / n)
 
 
-def standaard_afwijking(p: float, n: int):
+def standaard_afwijking(p: float, n: int) -> float:
     p = p * (1 - p)
     x = float(p / n)
     return float(math.sqrt(x))
 
 
-def steekproef_proportie(deel: float, geheel: float):
+def steekproef_proportie(deel: float, geheel: float) -> float:
     return float(deel / geheel)
 
 
-def betrouwbaarheidsinterval_95(p: float, sigma: float, form: bool = False):
+def betrouwbaarheidsinterval_95(p: float, sigma: float, _format: bool = False) -> str or float:
     antwoord = {}
     waarde_een = p - (2 * sigma)
     waarde_twee = p + (2 * sigma)
     antwoord[0] = waarde_een
     antwoord[1] = waarde_twee
-    if not form:
+    if not _format:
         return antwoord
     else:
         return f"[{antwoord[0]:.3f};{antwoord[1]:.3f}]"
