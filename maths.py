@@ -12,6 +12,18 @@ def standaard_afwijking(p: float, n: int) -> float:
     return float(math.sqrt(x))
 
 
+def steekprf_btrwbaarheidinterval_95(x: float, s: float, n: float, _format: bool = False) -> float or str:
+    antwoord = {}
+    n = math.sqrt(n)
+    tssn_antwrd = 2 * (s / n)
+    antwoord[0] = float(x - tssn_antwrd)
+    antwoord[1] = float(x + tssn_antwrd)
+    if not _format:
+        return antwoord
+    else:
+        return f"[{antwoord[0]:.3f};{antwoord[1]:.3f}]"
+
+
 def steekproef_proportie(deel: float, geheel: float) -> float:
     return float(deel / geheel)
 
