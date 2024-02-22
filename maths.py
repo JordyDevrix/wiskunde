@@ -38,3 +38,7 @@ def betrouwbaarheidsinterval_95(p: float, sigma: float, _format: bool = False) -
         return antwoord
     else:
         return f"[{antwoord[0]:.3f};{antwoord[1]:.3f}]"
+
+
+def remweg(snelheid: int) -> float:
+    return float("{:.2f}".format((float(snelheid) / 10) * (float(snelheid) / 10) / 2))
